@@ -1,0 +1,26 @@
+<div *ngIf="transactionsList; else noTransactions">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel *ngFor="let transaction of transactionsList" [title]="'This is '+transaction.amount+' '+transaction.type+' transaction'"
+          [type]="transaction.type === 'debit' ? 'success' : 'danger' ">
+          <ng-template ngbPanelContent>
+            <p>Transaction amount: {{transaction.amount}}</p>
+            <p>Transaction type: {{transaction.type ? 'credit' : 'debit'}}</p>
+            <p>Transaction fullfilled on: {{transaction.fullfilledAt}}</p>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #noTransactions>
+  <div class="card">
+    <div class="card-body mx-auto">
+      No transactions found
+    </div>
+  </div>
+</ng-template>

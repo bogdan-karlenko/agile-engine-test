@@ -1,0 +1,12 @@
+:host ::ng-deep .bg-success {
+    background-color: #ee693f !important;
+}
+
+:host ::ng-deep .bg-danger {
+    background-color: #739f3d !important;
+}
+
+:host ::ng-deep .btn-link {
+    color: white;
+    font-weight: bold;
+}
